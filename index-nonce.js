@@ -25,6 +25,7 @@ app.use(
       objectSrc: ["'none'"],
       workerSrc: ["'self'", "https://client.px-cloud.net", "https://captcha.px-cloud.net", "blob:"],
       frameSrc:  ["'self'", "https://crcldu.com"],
+      scriptSrcAttr: ["'unsafe-hashes'", "'sha256-r06el5nj4LzzeyLsM66siXSsDoaaE/F53fM5c7PzsO0='"],
     },
   })
 );
@@ -45,6 +46,7 @@ app.get('/', (req, res) => {
       <body>
         <h1>CSP-enabled</h1>
         <h3>window.dispatchEvent(new Event('triggerPxAutoAbrCaptchaDemo'));</h3>
+        <button onclick="window.dispatchEvent(new Event('triggerPxAutoAbrCaptchaDemo'));">Trigger Auto ABR Captcha</button>
         <script nonce="static12345">
           console.log('Hello, world!');
         </script>
